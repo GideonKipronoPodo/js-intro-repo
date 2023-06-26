@@ -71,5 +71,8 @@ const data = {
 
 //   tasks
 //1. log the word Manager from this dataset
+console.log(data.employees[0].position);
 //2.  log the salary of the second employee
+console.log(data.employees[1].salary);
 //3.  print the last skill for the employee Joh Doe(node js)
+console.log(data.employees[0].skills[2]);
