@@ -1,4 +1,4 @@
-const url = "https://football98.p.rapidapi.com/bundesliga/transfers";
+
 const options = {
   method: "GET",
   headers: {
@@ -7,13 +7,14 @@ const options = {
   },
 };
 
-async function getTransfers() {
+async function getTransfers(league) {
+  const url = "https://football98.p.rapidapi.com/"+league+"/transfers";
   const response = await fetch(url, options);
   const data = await response.json();
   console.log(data);
 
   const transfersDiv = document.getElementById("transfers");
-
+  transfersDiv.innerHTML = ""
   data.forEach((transfer) => {
     const transferDiv = document.createElement("div");
     const playerEl = document.createElement("h2");
@@ -29,5 +30,10 @@ async function getTransfers() {
   });
 }
 
-getTransfers();
-console.log("helllo 1");
+getTransfers("bundesliga")
+
+
+// event lister
+document.getElementById("leagues").addEventListener("change", (action)=>{
+  getTransfers(action.target.value);
+})

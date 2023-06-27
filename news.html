@@ -6,9 +6,21 @@
     <title>Transfer news</title>
   </head>
   <body>
+    <button id="colorchanger"> Change</button>
+
     <h1>Transfer news</h1>
+    <select name="leagues" id="leagues">
+      <option value="bundesliga">Bundesliga</option>
+      <option value="premierleague">Premier League</option>
+      <option value="laliga">LaLiga</option>
+      <option value="leagueone">League One</option>
+      <option value="eflcup">EFL Cup</option>
+      <option value="seriea">Serie A</option>
+    </select>
+
     <div class="trnasfers" id="transfers"></div>
 
     <script src="./fetch.js"></script>
+    <script src="./event.js"></script>
   </body>
 </html>
